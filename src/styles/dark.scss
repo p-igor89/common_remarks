@@ -1,0 +1,37 @@
+.dark {
+  background-color: #202a37;
+
+  --neutral: #cfcdcd;
+  --color-1: #0f6ae1;
+  --color-2: #e10f64;
+
+  .gatsby-remark-prismjs-copy-button {
+    background-color: #e10f64;
+
+    &:hover {
+      background-color: #0f6ae1;
+    }
+  }
+
+  #article {
+    .gatsby-remark-autolink-header svg {
+      fill: white;
+    }
+
+    h2::after {
+      background: linear-gradient(45deg, #55c3ff 0%, #35ffb2 100%);
+    }
+
+    h3::after {
+      background: linear-gradient(45deg, #55c3ff 0%, #e10f64 100%);
+    }
+
+    a {
+      background-image: linear-gradient(to right, #55c3ff, #35ffb2 100%);
+
+      &:hover {
+        background-image: linear-gradient(to right, #55c3ff, #e10f64 100%);
+      }
+    }
+  }
+}

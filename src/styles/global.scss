@@ -1,0 +1,232 @@
+@import './dark.scss';
+@import './light.scss';
+@import './search.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+    https://github.com/tailwindlabs/tailwindcss/discussions/2394
+    https://github.com/tailwindlabs/tailwindcss/pull/5732
+*/
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+#article {
+  line-height: 1.75rem;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding-bottom: 0.25rem;
+
+    // Color is defined src/styles/light.scss and src/styles/dark.scss
+    &::after {
+      content: '';
+      display: block;
+      height: 0.35rem;
+      max-width: 30%;
+      margin-top: 0.5rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.85rem;
+    opacity: 0.8;
+
+    // Color is defined src/styles/light.scss and src/styles/dark.scss
+    &::after {
+      content: '';
+      display: block;
+      height: 0.15rem;
+      max-width: 30%;
+      margin-top: 0.5rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 0.875rem;
+  }
+
+  p,
+  td,
+  th {
+    margin-bottom: 2rem;
+    line-height: 2.25rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  li {
+    margin-bottom: 0.1rem;
+    line-height: 2.25rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  th {
+    font-weight: bold;
+    background-color: var(--color-2);
+    color: white;
+    text-align: left;
+  }
+
+  th,
+  td {
+    border: solid 1px var(--color-2);
+    padding: 0.25rem 0.5rem;
+
+    &:hover {
+      background-color: var(--color-2);
+      color: white;
+    }
+  }
+
+  pre {
+    margin-top: 2rem;
+  }
+
+  a {
+    font-weight: bold;
+    color: transparent;
+    background-clip: text;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    list-style-type: disc;
+
+    li {
+      padding-left: 0.5rem;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  blockquote {
+    border-left: 8px var(--color-2) solid;
+    padding-left: 1rem;
+  }
+
+  hr {
+    margin-bottom: 2rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  strong {
+    font-weight: 800;
+  }
+
+  code {
+    font-size: 1.25rem;
+  }
+
+  .gatsby-resp-image-figcaption p {
+    font-size: 0.875rem;
+  }
+}
+
+.gatsby-resp-image-figcaption {
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.gatsby-remark-code-title {
+  padding: 0.5em 1em;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-family: monospace;
+}
+
+.gatsby-remark-prismjs-copy-button {
+  position: absolute;
+  top: 0.25rem;
+  right: 1rem;
+  padding: 0 1rem;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gatsby-remark-prismjs-copy-button-container + .gatsby-highlight {
+  pre {
+    padding-top: 2rem !important;
+    line-height: 2rem !important;
+  }
+}
+
+.ribbon {
+  .backdrop {
+    height: 150px;
+    width: 150px;
+    right: -10px;
+    top: -10px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      left: -1px;
+      width: 40px;
+      height: 12px;
+      right: 100px;
+      border-radius: 8px 8px 0px 0px;
+    }
+
+    &::after {
+      right: 0;
+      bottom: 3px;
+      width: 11px;
+      height: 20px;
+      border-bottom-right-radius: 5px;
+    }
+
+    .foreground {
+      z-index: 1;
+    }
+  }
+}
